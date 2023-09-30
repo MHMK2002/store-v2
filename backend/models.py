@@ -17,13 +17,13 @@ class Model(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.client.close()
 
-    def insert(self, data):
+    def create(self, data):
         return self.collection.insert_one(data)
 
     def find(self, query):
         return self.collection.find(query)
 
-    def bulk_insert(self, data):
+    def bulk_create(self, data):
         return self.collection.insert_many(data)
 
     def update(self, query, data):
